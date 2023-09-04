@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="pcl_ros" type="pcd_to_pointcloud" name="pcd_to_pointcloud" args="/datasets/ampap/map_cropped.pcd _frame_id:=map _latch:=true" />
+
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+    <param name="resolution" value="0.2" />
+    <param name="max_depth" value="16" />
+    
+    <param name="frame_id" type="string" value="map" />
+    
+    <param name="occupancy_min_z" value="-2.0" />
+    <param name="occupancy_max_z" value="2.0" />
+    <param name="pointcloud_min_z" value="-2.0" />
+    <param name="pointcloud_max_z" value="2.0" />
+
+    <param name="sensor_model/max_range" value="100.0" />
+
+    <remap from="cloud_in" to="/cloud_pcd" />
+    
+  </node>
+</launch>

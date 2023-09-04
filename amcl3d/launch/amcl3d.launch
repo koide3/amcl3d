@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="map_name_path"/>
-  <arg name="init_x"/>
-  <arg name="init_y"/>
-  <arg name="init_z"/>
-  <arg name="init_a"/>
-  <arg name="num_particles"/>
-  <arg name="alpha"/>
-  <arg name="take_off_height"/>
+  <arg name="map_name_path" default="/datasets/ampap/map_cropped.ot"/>
+  <arg name="init_x" default="1.0" />
+  <arg name="init_y" default="1.0" />
+  <arg name="init_z" default="1.0" />
+  <arg name="init_a" default="1.0" />
+  <arg name="num_particles" default="100" />
+  <arg name="alpha" default="0.95" />
+  <arg name="take_off_height" default="0.5" />
 
   <node pkg="amcl3d" type="amcl3d_node" name="amcl3d_node" output="screen">
 

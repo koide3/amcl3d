@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="octomap_server" type="octomap_saver" name="octomap_saver" args="-f /datasets/ampap/map_cropped.ot" output="screen">
+  </node>
+</launch>
